@@ -1,5 +1,6 @@
 import 'package:calendar_app/screens/event_details_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../providers/event_provider.dart';
 import './map_screen.dart';
@@ -17,7 +18,8 @@ class CalendarScreen extends StatelessWidget {
         itemCount: events.length,
         itemBuilder: (ctx, i) => ListTile(
           title: Text(events[i].title),
-          subtitle: Text('${events[i].dateTime} - ${events[i].locationName}'),
+          subtitle: Text(
+              '${DateFormat('yMMMd').add_jm().format(events[i].dateTime)} - ${events[i].locationName}'),
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(

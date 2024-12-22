@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/event.dart';
+import 'package:intl/intl.dart';
 
 class EventDetailsScreen extends StatelessWidget {
   final Event event;
@@ -12,14 +13,18 @@ class EventDetailsScreen extends StatelessWidget {
       appBar: AppBar(title: Text(event.title)),
       body: Column(
         children: [
-          Text('Date & Time: ${event.dateTime}'),
-          Text('Location: ${event.locationName}'),
-          ElevatedButton(
-            child: const Text('Navigate to Event'),
-            onPressed: () {
-              // Implement navigation to event location
-            },
+          Center(
+            child: Text(
+              event.title,
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
           ),
+          Text(
+            'Date & Time: ${DateFormat('yMMMd').add_jm().format(event.dateTime)}',
+            style: const TextStyle(fontSize: 18),
+          ),
+          Text('Location: ${event.locationName}',
+              style: const TextStyle(fontSize: 18)),
         ],
       ),
     );
