@@ -121,7 +121,7 @@ class _MapScreenState extends State<MapScreen> {
   Future<void> _getRoute(
       double startLat, double startLng, double endLat, double endLng) async {
     final url = Uri.parse(
-        "https://maps.googleapis.com/maps/api/directions/json?origin=$startLat,$startLng&destination=$endLat,$endLng&key=AIzaSyAav58WJq9t-4Tjtye7O8v7gt_m6Xn_5EU");
+        "https://maps.googleapis.com/maps/api/directions/json?origin=$startLat,$startLng&destination=$endLat,$endLng&key=API_KEY");
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
