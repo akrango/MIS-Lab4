@@ -1,34 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'package:google_maps_flutter/google_maps_flutter.dart';
-// import 'package:provider/provider.dart';
-// import '../providers/event_provider.dart';
-
-// class MapScreen extends StatelessWidget {
-//   const MapScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final events = Provider.of<EventProvider>(context).events;
-
-//     return Scaffold(
-//       appBar: AppBar(title: const Text('Map')),
-//       body: GoogleMap(
-//         initialCameraPosition: CameraPosition(
-//           target: LatLng(events[0].latitude, events[0].longitude),
-//           zoom: 14,
-//         ),
-//         markers: events
-//             .map((e) => Marker(
-//                   markerId: MarkerId(e.title),
-//                   position: LatLng(e.latitude, e.longitude),
-//                   infoWindow:
-//                       InfoWindow(title: e.title, snippet: e.locationName),
-//                 ))
-//             .toSet(),
-//       ),
-//     );
-//   }
-// }
 import 'dart:convert';
 import 'package:calendar_app/models/event.dart';
 import 'package:flutter/material.dart';
